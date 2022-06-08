@@ -5,7 +5,7 @@ services:
     image: ibmcom/db2
 
     ports:
-      - 50000:5000
+      - 5000:5000
 
     env_file: .env_list
     privileged: true
