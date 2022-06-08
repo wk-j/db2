@@ -1,0 +1,18 @@
+version: "3.1"
+
+services:
+  db2:
+    image: ibmcom/db2
+
+    ports:
+      - 50000:5000
+
+    env_file: .env_list
+    privileged: true
+    restart: always
+
+    volumes:
+      - ./db:/database
+
+# docker run -h db2server --name db2server --restart=always --detach --privileged=true \
+#     -p 50000:50000 --env-file .env_list -v db:/database ibmcom/db2
